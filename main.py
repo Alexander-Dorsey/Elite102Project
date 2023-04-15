@@ -13,6 +13,8 @@ def create(name,balance,cred):
 def show():
     testQuery = ("SELECT * FROM accounts")
     cursor.execute(testQuery)
+    for item in cursor:
+        print(item)
 create('John','6900','450')
 show()
 
