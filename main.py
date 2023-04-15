@@ -15,5 +15,5 @@ def show():
     cursor.execute(testQuery)
 create('John','6900','450')
 show()
-cursor.close()
+
 connection.close()
