@@ -9,7 +9,7 @@ def check(ID):
 def create(name,balance,cred):
     addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES(" + name + "," + balance + "," + cred + ")")
     cursor.execute(addData)
-    connection.commit
+    connection.commit()
 def show():
     testQuery = ("SELECT * FROM accounts")
     cursor.execute(testQuery)
