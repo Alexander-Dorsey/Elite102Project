@@ -11,7 +11,7 @@ def add(ID,amount):
     i = i+1
 def create(name,balance,cred):
     addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES(" + name + ", " + balance + ", " + cred + ")")
-    cursor.executre(addData)
+    cursor.execute(addData)
 def show():
     testQuery = ("SELECT * FROM accounts")
     cursor.execute(testQuery)
