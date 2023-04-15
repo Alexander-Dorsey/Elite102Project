@@ -7,7 +7,7 @@ def check(ID):
     for item in cursor:
         print(item)
 def create(name,balance,cred):
-    addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES(" + name + "," + balance + "," + cred + ")")
+    addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES('" + name + "'," + balance + "," + cred + ")")
     cursor.execute(addData)
     connection.commit()
 def show():
