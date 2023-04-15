@@ -6,7 +6,7 @@ def check(ID):
     cursor.execute(Query)
     for item in cursor:
         print(item)
-check(6);
+check('6');
 connection.commit()
 cursor.close()
 connection.close()
