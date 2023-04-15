@@ -15,7 +15,6 @@ def show():
     cursor.execute(testQuery)
     for item in cursor:
         print(item)
-create('John','6900','450')
 show()
 
 connection.close()
