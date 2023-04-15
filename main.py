@@ -10,8 +10,9 @@ def add(ID,amount):
     i = 4;
     i = i+1
 def create(name,balance,cred):
-    addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES(" + name + ", " + balance + ", " + cred + ")")
+    addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES(" + name + "," + balance + "," + cred + ")")
     cursor.execute(addData)
+    connection.commit()
 def show():
     testQuery = ("SELECT * FROM accounts")
     cursor.execute(testQuery)
