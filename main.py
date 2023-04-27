@@ -15,6 +15,10 @@ def show():
     cursor.execute(testQuery)
     for item in cursor:
         print(item)
+##def add():
+    ##testAdd
+create("John",54382.3,350)
+
 show()
 
 connection.close()
