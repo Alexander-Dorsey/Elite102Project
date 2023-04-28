@@ -1,8 +1,10 @@
+"""
+import json
 from flask import Flask, render_template_string
 from login_form import LoginForm
 from new_student_form import NewStudentForm
 app = Flask(__name__)
-app.config['Secret_Key'] = 'superdeuper-secretkey'
+app.config['Secret_Key'] = 'superduper-secretkey'
 
 @app.route('/')
 def hello_world():
@@ -26,3 +28,4 @@ def login():
 
 if __name__ == '__main__':
     app.run()
+"""
