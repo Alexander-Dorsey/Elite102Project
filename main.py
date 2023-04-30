@@ -6,8 +6,10 @@ def check(ID):
     cursor.execute(Query)
     for item in cursor:
         print(item)
-def create(name,balance,cred):
-    addData = ("INSERT INTO accounts(accountName,accountBalance,credit) VALUES('" + name + "'," + balance + "," + cred + ")")
+def create(name,balance,cred,password):
+    balance = float(balance)
+    cred = int(cred)
+    addData = ("INSERT INTO accounts(accountName,accountBalance,credit,password) VALUES('" + name + "'," + balance + "," + cred + "," + password + ")")
     cursor.execute(addData)
     connection.commit()
 def show():
@@ -59,13 +61,26 @@ def modify(ID,data,value):
         change = ("UPDATE accounts SET accountName = \"" + value + "\" WHERE accountID = " + str(ID))
     elif(data[0].upper() == "C"):
         change = ("UPDATE accounts SET credit = " + value + " WHERE accountID = " + str(ID))
+    elif(data[0].upper() == "C"):
+        change = ("UPDATE accounts SET password = " + value + " WHERE accountID = " + str(ID))
+    else:
+        print("Not valid imput")
+        return
     cursor.execute(change)
     connection.commit()
-##trunc()
-##create("John","54832.8","650")
-##add(1,500.00)
-##withdraw(1,500.00)
-##modify(1,"name","Smith")
-##delete(1)
-show()
+def login(): 
+    print()
+while(True):
+    act = input("Welcome to the banking app.\nWould you like to create an account or login\n")
+    if(act[0].upper == "L"):
+        if(login()):
+            break
+    elif(act[0].upper == "C"):
+        n = input("Set the name for your account")
+        m = input("Set the starting balance of your account")
+        c = input("Set the credit of your account")
+        p = input("Set the password of your account")
+        create(n,m,c,p)
+    else:
+        print("Invalid Input")
 connection.close()
